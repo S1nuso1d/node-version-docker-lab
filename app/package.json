@@ -1,0 +1,8 @@
+{
+  "name": "docker-node-lab",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo \"Сборка приложения выполнена\"",
+    "start": "node index.js"
+  }
+}
