@@ -1,16 +1,15 @@
 FROM node:slim
 
 RUN apt-get update \
-    && apt-get install -y curl \
+    && apt-get install -y curl procps bash \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g n
 
 WORKDIR /app
 
-COPY app/ /app/
-COPY entrypoint.sh /entrypoint.sh
+COPY . /app
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x entrypoint.sh test_resources.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
